@@ -25,7 +25,7 @@ function Header() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-[#eadff2]/80 bg-white/90 backdrop-blur-xl">
       <div className="mx-auto flex h-[76px] max-w-[1440px] items-center justify-between px-5 md:h-[88px] md:px-10 lg:px-14">
         <Link to="/#uvod" className="relative z-50 flex items-center" aria-label="Events CZ/SK – úvod">
-          <img src="/assets/events-logo.png" alt="Events CZ/SK" className="brand-logo -my-4 h-16 w-auto translate-y-1 object-contain md:h-20" />
+          <img src="/assets/events-logo.png" alt="Events CZ/SK" className="brand-logo -my-3 h-12 w-auto translate-y-1 object-contain md:h-[60px]" />
         </Link>
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Hlavní navigace">
           {links.map((link) => {
@@ -55,7 +55,7 @@ function Footer() {
     <footer className="border-t border-[#eee5f3] bg-white">
       <div className="mx-auto max-w-[1440px] px-5 py-14 md:px-10 md:py-20 lg:px-14">
         <div className="grid gap-12 border-b border-[#eee5f3] pb-14 md:grid-cols-2 lg:grid-cols-[1.2fr_.8fr_.8fr]">
-          <div><img src="/assets/events-header.png" alt="Events CZ/SK" className="brand-logo -my-8 h-28 w-auto translate-y-2 object-contain" /><p className="mt-5 max-w-sm text-lg leading-relaxed text-[#666371]">Eventy vyladěné do posledního detailu.</p><div className="mt-5 flex items-center gap-2 text-xs font-bold uppercase tracking-[.18em] text-[#8a24df]"><Radio className="h-4 w-4" /> Event · Festival · Produkce</div></div>
+          <div><img src="/assets/events-header.png" alt="Events CZ/SK" className="brand-logo -my-6 h-[84px] w-auto translate-y-2 object-contain" /><p className="mt-5 max-w-sm text-lg leading-relaxed text-[#666371]">Eventy vyladěné do posledního detailu.</p><div className="mt-5 flex items-center gap-2 text-xs font-bold uppercase tracking-[.18em] text-[#8a24df]"><Radio className="h-4 w-4" /> Event · Festival · Produkce</div></div>
           <div><p className="mb-5 text-xs font-extrabold uppercase tracking-[0.2em] text-[#8a24df]">Navigace</p><div className="flex flex-col gap-3">{links.map((link) => <Link key={link.to} to={link.to} className="w-fit font-semibold text-[#4f4c58] transition-colors hover:text-[#b10ae9]">{link.label}</Link>)}</div></div>
           <div><p className="mb-5 text-xs font-extrabold uppercase tracking-[0.2em] text-[#8a24df]">Kontakt</p><a href={`mailto:${contactEmail}`} className="block text-lg font-bold text-[#292832] hover:text-[#a50ce8]">{contactEmail}</a><a href={facebookUrl} target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#666371] hover:text-[#8a24df]"><Facebook className="h-4 w-4" /> Facebook</a></div>
         </div>
