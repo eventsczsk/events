@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpRight, Check, Sparkles } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import ContactBand from "@/components/ContactBand";
 import PageMeta from "@/components/PageMeta";
@@ -11,7 +11,7 @@ export default function Index() {
     <>
       <PageMeta title="Events CZ/SK – Vyladěné eventy" description="Produkce a organizace eventů, festivalů a veřejných akcí. Events CZ/SK zajistí váš event do posledního detailu." />
 
-      <section className="relative flex min-h-[620px] items-center overflow-hidden bg-[#f8f3fb] lg:h-[calc(100svh-88px)] lg:max-h-[820px] lg:min-h-[650px]">
+      <section id="uvod" className="scroll-mt-24 relative flex min-h-[620px] items-center overflow-hidden bg-[#f8f3fb] lg:h-[calc(100svh-88px)] lg:max-h-[820px] lg:min-h-[650px]">
         <img src={eventPhotos[0]} alt="Atmosféra akce produkované Events CZ/SK" className="absolute inset-0 h-full w-full object-cover object-center" fetchPriority="high" />
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/5 lg:via-white/65 lg:to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white/70 to-transparent" />
@@ -20,14 +20,14 @@ export default function Index() {
             <p className="mb-5 flex items-center gap-3 text-xs font-extrabold uppercase tracking-[0.22em] text-[#781adb]"><span className="brand-gradient h-2.5 w-2.5 rounded-full" /> Eventová & festivalová produkce</p>
             <h1 className="text-[clamp(3.1rem,6vw,6.5rem)] font-black leading-[0.87] tracking-[-0.065em] text-[#292832]">Eventy <span className="brand-text">vyladěné</span><br />do posledního<br />detailu.</h1>
             <p className="mt-6 max-w-lg text-base font-medium leading-relaxed text-[#514e58] md:text-lg">Produkce a organizace eventů, festivalů a veřejných akcí. Od prvního nápadu po poslední detail realizace.</p>
-            <div className="mt-7 flex flex-wrap gap-3"><Link to="/kontakt" className="brand-gradient group inline-flex items-center gap-3 rounded-full px-6 py-3.5 font-bold text-white shadow-[0_12px_28px_rgba(109,26,228,.28)] transition-all hover:-translate-y-1">Kontaktujte nás <ArrowRight className="h-5 w-5 group-hover:translate-x-1" /></Link><Link to="/projekty" className="rounded-full border border-white bg-white/90 px-6 py-3.5 font-bold text-[#423e48] shadow-[0_8px_24px_rgba(64,39,78,.12)] backdrop-blur-md hover:text-[#8219df]">Naše akce</Link></div>
+            <div className="mt-7 flex flex-wrap gap-3"><Link to="/#kontakt" className="brand-gradient group inline-flex items-center gap-3 rounded-full px-6 py-3.5 font-bold text-white shadow-[0_12px_28px_rgba(109,26,228,.28)] transition-all hover:-translate-y-1">Kontaktujte nás <ArrowRight className="h-5 w-5 group-hover:translate-x-1" /></Link><Link to="/#projekty" className="rounded-full border border-white bg-white/90 px-6 py-3.5 font-bold text-[#423e48] shadow-[0_8px_24px_rgba(64,39,78,.12)] backdrop-blur-md hover:text-[#8219df]">Naše akce</Link></div>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#faf7fc] py-16 md:py-20">
+      <section id="sluzby" className="scroll-mt-24 bg-[#faf7fc] py-16 md:py-20">
         <div className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-14">
-          <div className="mb-8 flex items-end justify-between gap-6"><div><p className="text-xs font-extrabold uppercase tracking-[.22em] text-[#8219df]">Nabízené služby</p><h2 className="mt-2 text-3xl font-black tracking-[-.04em] text-[#302d36] md:text-4xl">Zařídíme pro vás</h2></div><Link to="/sluzby" className="hidden items-center gap-2 font-bold text-[#8319df] sm:flex">Detail služeb <ArrowRight className="h-5 w-5" /></Link></div>
+          <div className="mb-8"><p className="text-xs font-extrabold uppercase tracking-[.22em] text-[#8219df]">Nabízené služby</p><h2 className="mt-2 text-3xl font-black tracking-[-.04em] text-[#302d36] md:text-4xl">Zařídíme pro vás</h2></div>
           <div className="flex flex-wrap justify-center gap-4">
             {services.map((service, index) => {
               const Icon = service.icon;
@@ -47,13 +47,12 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="soft-festival-bg py-20 md:py-24 lg:py-28">
+      <section id="projekty" className="scroll-mt-24 soft-festival-bg py-20 md:py-24 lg:py-28">
         <div className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-14">
           <Reveal><SectionHeading eyebrow="Naše akce" title="Projekty, které žijí s publikem" description="Festivaly a veřejné akce prezentované v portfoliu Events CZ/SK." /></Reveal>
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {projects.map((project, index) => <Reveal key={project.name} delay={index * 70}><a href={project.href} target="_blank" rel="noreferrer" className="group flex h-[330px] flex-col rounded-3xl border border-[#e8dbee] bg-white p-6 shadow-[0_12px_38px_rgba(72,28,94,.08)] transition-all hover:-translate-y-1.5 hover:shadow-[0_18px_46px_rgba(95,24,128,.13)]"><div className="flex items-center justify-between"><span className="text-[10px] font-extrabold uppercase tracking-[.17em] text-[#841add]">{project.label}</span><ArrowUpRight className="h-5 w-5 text-[#9a14e5]" /></div><div className="my-auto flex h-40 items-center justify-center px-5"><img src={project.image} alt={`Logo projektu ${project.name}`} className={`max-h-32 w-auto object-contain transition-transform duration-500 group-hover:scale-105 ${project.imageClass}`} loading="lazy" /></div><div className="border-t border-[#eadff0] pt-4"><span className="text-[10px] font-bold text-[#aaa2b1]">0{index + 1}</span><h3 className="mt-1 text-2xl font-black tracking-[-.035em] text-[#302d36]">{project.name}</h3></div></a></Reveal>)}
           </div>
-          <div className="mt-8 text-right"><Link to="/projekty" className="inline-flex items-center gap-2 font-bold text-[#8319df]">Prohlédnout projekty <ArrowRight className="h-5 w-5" /></Link></div>
         </div>
       </section>
 
