@@ -59,6 +59,7 @@
       #fbf9fe;
   }
   .card-glow { box-shadow: 0 18px 60px rgba(77, 35, 109, .09), 0 2px 12px rgba(77, 35, 109, .05); }
+  .brand-logo { filter: brightness(0) saturate(100%) invert(20%) sepia(94%) saturate(4510%) hue-rotate(265deg) brightness(86%) contrast(104%); }
   .animate-rise { animation: rise .75s cubic-bezier(.22,1,.36,1) both; }
   .animate-float { animation: float 8s ease-in-out infinite; }
 }
