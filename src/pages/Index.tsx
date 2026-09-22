@@ -11,108 +11,57 @@ export default function Index() {
     <>
       <PageMeta title="Events CZ/SK – Vyladěné eventy" description="Produkce a organizace eventů, festivalů a veřejných akcí. Events CZ/SK zajistí váš event do posledního detailu." />
 
-      <section className="relative min-h-[860px] overflow-hidden bg-[#f8f3fb] lg:min-h-[calc(100svh-88px)]">
-        <img
-          src={eventPhotos[0]}
-          alt="Atmosféra akce produkované Events CZ/SK"
-          className="absolute inset-0 h-full w-full object-cover object-center"
-          fetchPriority="high"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/5 lg:via-white/70 lg:to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-52 bg-gradient-to-t from-[#faf7fc] to-transparent" />
-        <div aria-hidden="true" className="brand-gradient absolute right-[8%] top-[14%] h-28 w-28 rounded-full opacity-25 blur-2xl" />
-
-        <div className="relative mx-auto flex min-h-[680px] max-w-[1440px] items-center px-5 pb-24 pt-16 md:px-10 lg:min-h-[calc(100svh-88px)] lg:px-14 lg:pb-36">
-          <div className="max-w-[820px] animate-rise">
-            <p className="mb-6 flex items-center gap-3 text-xs font-extrabold uppercase tracking-[0.24em] text-[#781adb]">
-              <span className="brand-gradient h-2.5 w-2.5 rounded-full shadow-[0_0_20px_rgba(194,8,235,.65)]" /> Events CZ/SK s.r.o.
-            </p>
-            <h1 className="text-[clamp(3.7rem,8.2vw,9rem)] font-black leading-[0.82] tracking-[-0.075em] text-[#292832] drop-shadow-[0_2px_0_rgba(255,255,255,.5)]">
-              Eventy <span className="brand-text">vyladěné</span><br />do posledního<br />detailu.
-            </h1>
-            <p className="mt-8 max-w-xl text-lg font-medium leading-relaxed text-[#514e58] md:text-xl">Produkce a organizace eventů, festivalů a veřejných akcí. Od prvního nápadu po poslední detail realizace.</p>
-            <div className="mt-9 flex flex-wrap gap-4">
-              <Link to="/kontakt" className="brand-gradient group inline-flex items-center gap-4 rounded-full px-7 py-4 font-bold text-white shadow-[0_14px_32px_rgba(109,26,228,.30)] transition-all hover:-translate-y-1">Kontaktujte nás <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" /></Link>
-              <Link to="/projekty" className="inline-flex items-center gap-3 rounded-full border border-white bg-white/90 px-7 py-4 font-bold text-[#423e48] shadow-[0_10px_30px_rgba(64,39,78,.12)] backdrop-blur-md transition-all hover:-translate-y-1 hover:text-[#8219df]">Naše akce</Link>
-            </div>
+      <section className="relative flex min-h-[620px] items-center overflow-hidden bg-[#f8f3fb] lg:h-[calc(100svh-88px)] lg:max-h-[820px] lg:min-h-[650px]">
+        <img src={eventPhotos[0]} alt="Atmosféra akce produkované Events CZ/SK" className="absolute inset-0 h-full w-full object-cover object-center" fetchPriority="high" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/5 lg:via-white/65 lg:to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white/70 to-transparent" />
+        <div className="relative mx-auto w-full max-w-[1440px] px-5 py-14 md:px-10 lg:px-14">
+          <div className="max-w-[680px] animate-rise">
+            <p className="mb-5 flex items-center gap-3 text-xs font-extrabold uppercase tracking-[0.22em] text-[#781adb]"><span className="brand-gradient h-2.5 w-2.5 rounded-full" /> Events CZ/SK s.r.o.</p>
+            <h1 className="text-[clamp(3.1rem,6vw,6.5rem)] font-black leading-[0.87] tracking-[-0.065em] text-[#292832]">Eventy <span className="brand-text">vyladěné</span><br />do posledního<br />detailu.</h1>
+            <p className="mt-6 max-w-lg text-base font-medium leading-relaxed text-[#514e58] md:text-lg">Produkce a organizace eventů, festivalů a veřejných akcí. Od prvního nápadu po poslední detail realizace.</p>
+            <div className="mt-7 flex flex-wrap gap-3"><Link to="/kontakt" className="brand-gradient group inline-flex items-center gap-3 rounded-full px-6 py-3.5 font-bold text-white shadow-[0_12px_28px_rgba(109,26,228,.28)] transition-all hover:-translate-y-1">Kontaktujte nás <ArrowRight className="h-5 w-5 group-hover:translate-x-1" /></Link><Link to="/projekty" className="rounded-full border border-white bg-white/90 px-6 py-3.5 font-bold text-[#423e48] shadow-[0_8px_24px_rgba(64,39,78,.12)] backdrop-blur-md hover:text-[#8219df]">Naše akce</Link></div>
           </div>
         </div>
       </section>
 
-      <section className="relative z-10 -mt-28 pb-24 md:-mt-32 md:pb-32">
+      <section className="bg-[#faf7fc] py-16 md:py-20">
         <div className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-14">
-          <div className="mb-6 flex items-end justify-between gap-6 px-1">
-            <div><p className="text-xs font-extrabold uppercase tracking-[.22em] text-[#8219df]">Nabízené služby</p><h2 className="mt-2 text-3xl font-black tracking-[-.04em] text-[#302d36] md:text-5xl">Zařídíme pro vás</h2></div>
-            <Link to="/sluzby" className="hidden items-center gap-2 font-bold text-[#8319df] sm:flex">Všechny služby <ArrowRight className="h-5 w-5" /></Link>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-12">
+          <div className="mb-8 flex items-end justify-between gap-6"><div><p className="text-xs font-extrabold uppercase tracking-[.22em] text-[#8219df]">Nabízené služby</p><h2 className="mt-2 text-3xl font-black tracking-[-.04em] text-[#302d36] md:text-4xl">Zařídíme pro vás</h2></div><Link to="/sluzby" className="hidden items-center gap-2 font-bold text-[#8319df] sm:flex">Detail služeb <ArrowRight className="h-5 w-5" /></Link></div>
+          <div className="flex flex-wrap justify-center gap-4">
             {services.map((service, index) => {
               const Icon = service.icon;
-              const span = index < 2 ? "lg:col-span-6" : index === 6 ? "lg:col-span-4 lg:col-start-5" : "lg:col-span-3";
-              return (
-                <Reveal key={service.title} className={span} delay={(index % 4) * 70}>
-                  <article className={`group relative h-full overflow-hidden rounded-[1.75rem] border border-[#eadff1] bg-white p-6 shadow-[0_14px_45px_rgba(68,28,91,.09)] transition-all duration-400 hover:-translate-y-2 hover:border-[#cb83e9] hover:shadow-[0_22px_55px_rgba(98,25,132,.15)] ${index < 2 ? "min-h-[240px] md:p-8" : "min-h-[260px]"}`}>
-                    <div aria-hidden="true" className="brand-gradient absolute -right-20 -top-24 h-52 w-52 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-[.12]" />
-                    <div className="relative flex items-start justify-between">
-                      <span className="brand-gradient grid h-14 w-14 place-items-center rounded-2xl text-white shadow-[0_10px_26px_rgba(109,26,228,.25)] transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110"><Icon className="h-6 w-6" /></span>
-                      <span className="text-xs font-extrabold text-[#b0a7b5]">0{index + 1}</span>
-                    </div>
-                    <h3 className="relative mt-8 pr-8 text-xl font-black leading-tight tracking-[-.025em] text-[#302d36] md:text-2xl">{service.title}</h3>
-                    <p className="relative mt-3 line-clamp-3 text-sm leading-relaxed text-[#6d6873]">{service.description}</p>
-                    <ArrowRight className="absolute bottom-5 right-6 h-5 w-5 text-[#a50ce8] transition-transform group-hover:translate-x-1" />
-                  </article>
-                </Reveal>
-              );
+              return <Reveal key={service.title} className="w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(25%-0.75rem)]" delay={(index % 4) * 55}><article className="group relative h-[250px] overflow-hidden rounded-3xl border border-[#e9ddef] bg-white p-6 shadow-[0_10px_35px_rgba(68,28,91,.08)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#c983e8] hover:shadow-[0_18px_42px_rgba(98,25,132,.13)]"><div className="flex items-start justify-between"><span className="brand-gradient grid h-12 w-12 place-items-center rounded-2xl text-white shadow-[0_8px_20px_rgba(109,26,228,.22)] transition-transform group-hover:-rotate-6"><Icon className="h-5 w-5" /></span><span className="text-[11px] font-extrabold text-[#b0a7b5]">0{index + 1}</span></div><h3 className="mt-6 pr-6 text-xl font-black leading-tight tracking-[-.025em] text-[#302d36]">{service.title}</h3><p className="mt-3 line-clamp-3 text-sm leading-relaxed text-[#6d6873]">{service.description}</p><ArrowRight className="absolute bottom-5 right-6 h-5 w-5 text-[#a50ce8] transition-transform group-hover:translate-x-1" /></article></Reveal>;
             })}
           </div>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-24 md:py-32 lg:py-40">
-        <div aria-hidden="true" className="absolute -right-40 top-10 h-96 w-96 rounded-full bg-[#f2cfff] opacity-45 blur-3xl" />
-        <div className="relative mx-auto grid max-w-[1440px] gap-16 px-5 md:px-10 lg:grid-cols-[1.05fr_.95fr] lg:items-center lg:gap-24 lg:px-14">
-          <Reveal className="relative min-h-[590px]">
-            <div className="absolute left-0 top-0 h-[74%] w-[72%] overflow-hidden rounded-[2.6rem] shadow-[0_26px_70px_rgba(73,35,95,.17)]"><img src={eventPhotos[1]} alt="Atmosféra eventu – publikum a program" className="h-full w-full object-cover transition-transform duration-1000 hover:scale-105" loading="lazy" /></div>
-            <div className="absolute bottom-0 right-0 h-[56%] w-[57%] overflow-hidden rounded-[2.2rem] border-[7px] border-white shadow-[0_22px_60px_rgba(73,35,95,.18)]"><img src={eventPhotos[2]} alt="Moment z produkované veřejné akce" className="h-full w-full object-cover transition-transform duration-1000 hover:scale-105" loading="lazy" /></div>
-            <div className="brand-gradient absolute bottom-[8%] left-[5%] grid h-20 w-20 place-items-center rounded-full text-white shadow-[0_14px_32px_rgba(109,26,228,.3)]"><Sparkles className="h-8 w-8" /></div>
+      <section className="relative overflow-hidden bg-white py-20 md:py-24 lg:py-28">
+        <div className="mx-auto grid max-w-[1440px] gap-12 px-5 md:px-10 lg:grid-cols-[.9fr_1.1fr] lg:items-center lg:gap-20 lg:px-14">
+          <Reveal className="relative min-h-[420px]">
+            <div className="absolute left-0 top-0 h-[78%] w-[72%] overflow-hidden rounded-[2rem] shadow-[0_20px_55px_rgba(73,35,95,.15)]"><img src={eventPhotos[1]} alt="Atmosféra eventu – publikum a program" className="h-full w-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy" /></div>
+            <div className="absolute bottom-0 right-0 h-[58%] w-[56%] overflow-hidden rounded-[1.7rem] border-[6px] border-white shadow-[0_18px_44px_rgba(73,35,95,.17)]"><img src={eventPhotos[2]} alt="Moment z produkované veřejné akce" className="h-full w-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy" /></div>
           </Reveal>
-          <Reveal delay={100}>
-            <p className="mb-5 text-xs font-extrabold uppercase tracking-[0.22em] text-[#841add]">O Events CZ/SK</p>
-            <h2 className="text-balance text-4xl font-black leading-[1.01] tracking-[-0.05em] text-[#302d36] sm:text-5xl lg:text-7xl">Od stavby pódia až po <span className="brand-text">poslední světlo.</span></h2>
-            <p className="mt-8 text-lg leading-relaxed text-[#66616c]">Vše zařídíme podle vašich představ – občerstvení, program, výzdobu, vybavení, zvuk, interprety, moderátory i úklid.</p>
-            <div className="mt-9 grid gap-4 sm:grid-cols-2">{["Produkce na klíč", "Technické vybavení", "Program a interpreti", "Bezpečný průběh"].map((item) => <div key={item} className="flex items-center gap-3 rounded-2xl border border-[#eadff0] bg-[#fcf9fe] px-4 py-3 font-semibold text-[#514d58]"><span className="brand-gradient grid h-7 w-7 place-items-center rounded-full text-white"><Check className="h-4 w-4" /></span>{item}</div>)}</div>
-          </Reveal>
+          <Reveal delay={80}><p className="mb-4 text-xs font-extrabold uppercase tracking-[0.22em] text-[#841add]">O Events CZ/SK</p><h2 className="text-balance text-4xl font-black leading-[1.02] tracking-[-0.045em] text-[#302d36] md:text-5xl lg:text-6xl">Od stavby pódia až po <span className="brand-text">poslední světlo.</span></h2><p className="mt-6 text-lg leading-relaxed text-[#66616c]">Vše zařídíme podle vašich představ – občerstvení, program, výzdobu, vybavení, zvuk, interprety, moderátory i úklid.</p><div className="mt-7 grid gap-3 sm:grid-cols-2">{["Produkce na klíč", "Technické vybavení", "Program a interpreti", "Bezpečný průběh"].map((item) => <div key={item} className="flex items-center gap-3 rounded-xl border border-[#eadff0] bg-[#fcf9fe] px-4 py-3 text-sm font-semibold text-[#514d58]"><span className="brand-gradient grid h-6 w-6 place-items-center rounded-full text-white"><Check className="h-3.5 w-3.5" /></span>{item}</div>)}</div></Reveal>
         </div>
       </section>
 
-      <section className="soft-festival-bg relative overflow-hidden py-24 md:py-32 lg:py-40">
+      <section className="soft-festival-bg py-20 md:py-24 lg:py-28">
         <div className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-14">
           <Reveal><SectionHeading eyebrow="Naše akce" title="Projekty, které žijí s publikem" description="Festivaly a veřejné akce prezentované v portfoliu Events CZ/SK." /></Reveal>
-          <div className="mt-16 grid gap-6 lg:grid-cols-12">
-            {projects.map((project, index) => {
-              const layout = index === 0 ? "lg:col-span-7 lg:min-h-[520px]" : index === 1 ? "lg:col-span-5 lg:min-h-[520px]" : "lg:col-span-12 lg:min-h-[390px]";
-              return (
-                <Reveal key={project.name} className={layout} delay={index * 90}>
-                  <a href={project.href} target="_blank" rel="noreferrer" className="group relative flex h-full min-h-[430px] flex-col overflow-hidden rounded-[2.5rem] border border-[#e8dbee] bg-white p-7 shadow-[0_18px_55px_rgba(72,28,94,.09)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_26px_65px_rgba(95,24,128,.15)] md:p-10">
-                    <div className="relative flex items-center justify-between"><span className="text-[11px] font-extrabold uppercase tracking-[.18em] text-[#841add]">{project.label}</span><span className="brand-gradient grid h-12 w-12 place-items-center rounded-full text-white"><ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" /></span></div>
-                    <div className="relative my-auto flex min-h-48 items-center justify-center rounded-[2rem] bg-[#fbf8fd] p-8"><span aria-hidden="true" className="absolute text-[10rem] font-black leading-none text-[#791bdd]/[.045]">0{index + 1}</span><img src={project.image} alt={`Logo projektu ${project.name}`} className={`relative max-h-44 w-auto object-contain transition-transform duration-700 group-hover:scale-110 ${project.imageClass}`} loading="lazy" /></div>
-                    <div className="relative mt-7 border-t border-[#eadff0] pt-6"><h3 className="text-4xl font-black tracking-[-.045em] text-[#302d36] md:text-5xl">{project.name}</h3></div>
-                  </a>
-                </Reveal>
-              );
-            })}
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {projects.map((project, index) => <Reveal key={project.name} delay={index * 70}><a href={project.href} target="_blank" rel="noreferrer" className="group flex h-[330px] flex-col rounded-3xl border border-[#e8dbee] bg-white p-6 shadow-[0_12px_38px_rgba(72,28,94,.08)] transition-all hover:-translate-y-1.5 hover:shadow-[0_18px_46px_rgba(95,24,128,.13)]"><div className="flex items-center justify-between"><span className="text-[10px] font-extrabold uppercase tracking-[.17em] text-[#841add]">{project.label}</span><ArrowUpRight className="h-5 w-5 text-[#9a14e5]" /></div><div className="my-auto flex h-40 items-center justify-center px-5"><img src={project.image} alt={`Logo projektu ${project.name}`} className={`max-h-32 w-auto object-contain transition-transform duration-500 group-hover:scale-105 ${project.imageClass}`} loading="lazy" /></div><div className="border-t border-[#eadff0] pt-4"><span className="text-[10px] font-bold text-[#aaa2b1]">0{index + 1}</span><h3 className="mt-1 text-2xl font-black tracking-[-.035em] text-[#302d36]">{project.name}</h3></div></a></Reveal>)}
           </div>
+          <div className="mt-8 text-right"><Link to="/projekty" className="inline-flex items-center gap-2 font-bold text-[#8319df]">Prohlédnout projekty <ArrowRight className="h-5 w-5" /></Link></div>
         </div>
       </section>
 
-      <section className="overflow-hidden bg-white py-24 md:py-32 lg:py-40">
+      <section className="bg-white py-20 md:py-24 lg:py-28">
         <div className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-14">
-          <Reveal><div className="flex flex-col gap-7 md:flex-row md:items-end md:justify-between"><SectionHeading eyebrow="Atmosféra" title="Světla. Hudba. Lidé." /><p className="max-w-md text-lg leading-relaxed text-[#69646f]">Skutečné momenty ze skutečných akcí Events CZ/SK.</p></div></Reveal>
-          <div className="mt-14 grid auto-rows-[190px] grid-cols-2 gap-3 sm:auto-rows-[230px] md:grid-cols-4 md:gap-5 lg:auto-rows-[280px]">
-            {eventPhotos.slice(3).map((photo, index) => {
-              const shape = index === 0 ? "col-span-2 row-span-2" : index === 3 ? "row-span-2" : index === 5 ? "col-span-2" : index === 8 ? "col-span-2" : "";
-              return <Reveal key={photo} className={shape} delay={(index % 4) * 60}><figure className="group h-full overflow-hidden rounded-[1.6rem] bg-[#f3edf6]"><img src={photo} alt={`Atmosféra akce Events CZ/SK ${index + 1}`} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" /></figure></Reveal>;
-            })}
+          <Reveal><div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between"><SectionHeading eyebrow="Atmosféra" title="Světla. Hudba. Lidé." /><p className="max-w-sm text-base leading-relaxed text-[#69646f]">Skutečné momenty ze skutečných akcí Events CZ/SK.</p></div></Reveal>
+          <div className="mt-10 grid auto-rows-[160px] grid-cols-2 gap-3 sm:auto-rows-[190px] md:grid-cols-4 lg:auto-rows-[220px]">
+            {eventPhotos.slice(3, 11).map((photo, index) => { const shape = index === 0 || index === 5 ? "col-span-2 row-span-2" : index === 3 ? "row-span-2" : ""; return <Reveal key={photo} className={shape} delay={(index % 4) * 45}><figure className="group h-full overflow-hidden rounded-2xl bg-[#f3edf6]"><img src={photo} alt={`Atmosféra akce Events CZ/SK ${index + 1}`} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" /></figure></Reveal>; })}
           </div>
         </div>
       </section>

@@ -12,10 +12,10 @@ export default function SectionHeading({ eyebrow, title, description, align = "l
         <span className="brand-gradient h-2 w-2 rounded-full shadow-[0_0_18px_rgba(194,8,235,.5)]" />
         {eyebrow}
       </p>
-      <h2 className="text-balance text-4xl font-black leading-[0.98] tracking-[-0.045em] text-[#292832] sm:text-5xl lg:text-7xl">
+      <h2 className="text-balance text-4xl font-black leading-[1.02] tracking-[-0.045em] text-[#292832] sm:text-5xl lg:text-6xl">
         {title}
       </h2>
-      {description && <p className={`mt-7 max-w-2xl text-lg leading-relaxed text-[#666371] md:text-xl ${align === "center" ? "mx-auto" : ""}`}>{description}</p>}
+      {description && <p className={`mt-5 max-w-2xl text-base leading-relaxed text-[#666371] md:text-lg ${align === "center" ? "mx-auto" : ""}`}>{description}</p>}
     </div>
   );
 }

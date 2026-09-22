@@ -9,11 +9,11 @@ export default function Contact() {
       <PageMeta title="Kontakt | Events CZ/SK" description="Kontaktujte Events CZ/SK ohledně produkce a organizace vaší akce." />
       <div aria-hidden="true" className="brand-gradient absolute -right-24 top-6 h-96 w-96 rounded-full opacity-10 blur-3xl" />
       <div aria-hidden="true" className="absolute -bottom-32 -left-32 h-80 w-80 rounded-full bg-[#f1b5ff] opacity-25 blur-3xl" />
-      <div className="relative mx-auto grid min-h-[calc(100svh-76px)] max-w-[1440px] gap-14 px-5 py-16 md:min-h-[calc(100svh-88px)] md:px-10 md:py-24 lg:grid-cols-[1.1fr_.9fr] lg:items-center lg:px-14">
+      <div className="relative mx-auto grid min-h-[calc(100svh-76px)] max-w-[1440px] gap-12 px-5 py-14 md:min-h-[calc(100svh-88px)] md:px-10 md:py-20 lg:grid-cols-[1.1fr_.9fr] lg:items-center lg:px-14">
         <Reveal>
-          <p className="mb-6 flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.24em] text-[#7b1cdb]"><Sparkles className="h-4 w-4" /> Kontakt</p>
-          <h1 className="text-balance text-6xl font-black leading-[0.86] tracking-[-0.065em] text-[#292832] sm:text-7xl lg:text-[8.5rem]">Pojďme vytvořit váš <span className="brand-text">event.</span></h1>
-          <p className="mt-9 max-w-xl text-lg leading-relaxed text-[#666371] md:text-xl">Napište nám. Rádi s vámi probereme možnosti realizace vaší akce.</p>
+          <p className="mb-5 flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.22em] text-[#7b1cdb]"><Sparkles className="h-4 w-4" /> Kontakt</p>
+          <h1 className="max-w-3xl text-balance text-5xl font-black leading-[0.92] tracking-[-0.055em] text-[#292832] sm:text-6xl lg:text-7xl">Pojďme vytvořit váš <span className="brand-text">event.</span></h1>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#666371]">Napište nám. Rádi s vámi probereme možnosti realizace vaší akce.</p>
         </Reveal>
         <Reveal delay={120}>
           <div className="card-glow relative overflow-hidden rounded-[2.5rem] border border-white bg-white p-7 md:p-11">
