@@ -80,5 +80,23 @@ export const projects = [
   },
 ];
 
+const archiveImageBase =
+  "https://web.archive.org/web/20260612112543im_/https://eventsczsk.cz/wp-content/uploads/2022/02";
+
+export const eventPhotos = [
+  `${archiveImageBase}/157-scaled.jpg`,
+  `${archiveImageBase}/3-scaled.jpg`,
+  `${archiveImageBase}/13-scaled.jpg`,
+  `${archiveImageBase}/18-scaled.jpg`,
+  `${archiveImageBase}/20-scaled.jpg`,
+  `${archiveImageBase}/26-scaled.jpg`,
+  `${archiveImageBase}/27-scaled.jpg`,
+  `${archiveImageBase}/52-scaled.jpg`,
+  `${archiveImageBase}/61-scaled.jpg`,
+  `${archiveImageBase}/73-scaled.jpg`,
+  `${archiveImageBase}/116-scaled.jpg`,
+  `${archiveImageBase}/133-scaled.jpg`,
+];
+
 export const contactEmail = "info@eventsczsk.cz";
 export const facebookUrl = "https://www.facebook.com/Events-CZSK-100103242673844";
