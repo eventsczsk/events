@@ -1,7 +1,8 @@
-import { ArrowRight, Check, Play } from "lucide-react";
+import { ArrowRight, Check, Music2, Play, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import ContactBand from "@/components/ContactBand";
 import PageMeta from "@/components/PageMeta";
+import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import { projects, services } from "@/data/site";
 
@@ -11,105 +12,82 @@ export default function Index() {
   return (
     <>
       <PageMeta title="Events CZ/SK – Vyladěné eventy" description="Produkce a organizace eventů, festivalů a veřejných akcí. Events CZ/SK zajistí váš event do posledního detailu." />
-      <section className="relative min-h-[calc(100svh-76px)] overflow-hidden bg-slate-950 text-white md:min-h-[calc(100svh-88px)]">
-        <img src={heroImage} alt="Atmosféra eventu produkovaného Events CZ/SK" className="absolute inset-0 h-full w-full object-cover opacity-45" fetchPriority="high" />
-        <div className="absolute inset-0 bg-slate-950/55" />
-        <div className="relative mx-auto flex min-h-[calc(100svh-76px)] max-w-[1440px] flex-col justify-end px-5 pb-10 pt-20 md:min-h-[calc(100svh-88px)] md:px-10 md:pb-16 lg:px-14">
-          <div className="max-w-5xl animate-rise">
-            <p className="mb-5 flex items-center gap-3 text-xs font-extrabold uppercase tracking-[0.22em] text-blue-300">
-              <span className="h-px w-10 bg-blue-400" /> Events CZ/SK s.r.o.
-            </p>
-            <h1 className="text-balance text-[clamp(3.6rem,10vw,9.5rem)] font-black leading-[0.84] tracking-[-0.065em]">
-              Eventy <span className="text-blue-400">vyladěné</span> do posledního detailu.
+
+      <section className="soft-festival-bg relative min-h-[calc(100svh-76px)] overflow-hidden md:min-h-[calc(100svh-88px)]">
+        <div aria-hidden="true" className="brand-gradient animate-float absolute -left-24 top-[18%] h-52 w-52 rounded-[38%] opacity-[.10] blur-2xl" />
+        <div aria-hidden="true" className="absolute right-[42%] top-12 h-24 w-24 rounded-full border-[18px] border-[#c208eb]/10" />
+        <div className="relative mx-auto grid min-h-[calc(100svh-76px)] max-w-[1440px] items-center gap-10 px-5 py-12 md:min-h-[calc(100svh-88px)] md:px-10 md:py-16 lg:grid-cols-[.88fr_1.12fr] lg:px-14">
+          <div className="relative z-10 animate-rise lg:py-14">
+            <p className="mb-6 flex items-center gap-3 text-xs font-extrabold uppercase tracking-[0.22em] text-[#7b1cdb]"><span className="brand-gradient h-2 w-2 rounded-full shadow-[0_0_18px_rgba(194,8,235,.55)]" /> Events CZ/SK s.r.o.</p>
+            <h1 className="text-[clamp(3.35rem,7.3vw,8.2rem)] font-black leading-[0.83] tracking-[-0.07em] text-[#292832]">
+              Eventy <span className="brand-text">vyladěné</span><br />do posledního<br />detailu.
             </h1>
+            <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#625f6b] md:text-xl">Produkce a organizace eventů, festivalů a veřejných akcí. Od prvního nápadu po poslední detail realizace.</p>
+            <div className="mt-9 flex flex-wrap items-center gap-4">
+              <Link to="/kontakt" className="brand-gradient group inline-flex items-center gap-4 rounded-full px-7 py-4 font-bold text-white shadow-[0_14px_30px_rgba(109,26,228,.24)] transition-all hover:-translate-y-1 hover:shadow-[0_18px_38px_rgba(194,8,235,.3)]">Kontaktujte nás <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" /></Link>
+              <Link to="/projekty" className="inline-flex items-center gap-3 rounded-full border border-[#dacbe5] bg-white/80 px-6 py-4 font-bold text-[#5d5865] transition-all hover:-translate-y-1 hover:border-[#a64bdf] hover:text-[#7b1cdb]">Naše projekty</Link>
+            </div>
           </div>
-          <div className="mt-10 flex flex-col gap-6 border-t border-white/25 pt-7 md:flex-row md:items-center md:justify-between">
-            <p className="max-w-xl text-base leading-relaxed text-slate-200 md:text-lg">
-              Produkce a organizace eventů, festivalů a veřejných akcí. Od prvního nápadu po poslední detail realizace.
-            </p>
-            <Link to="/sluzby" className="group inline-flex w-fit items-center gap-3 text-sm font-bold uppercase tracking-[0.15em] text-white">
-              Co umíme <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
-            </Link>
+
+          <div className="relative min-h-[430px] sm:min-h-[560px] lg:min-h-[680px]">
+            <div aria-hidden="true" className="brand-gradient absolute inset-x-[4%] bottom-[4%] top-[8%] rotate-3 rounded-[3rem] opacity-90" />
+            <div className="absolute inset-x-0 bottom-[8%] top-0 -rotate-2 overflow-hidden rounded-[2.8rem] border-[8px] border-white bg-white shadow-[0_30px_80px_rgba(82,28,111,.20)] transition-transform duration-700 hover:rotate-0">
+              <img src={heroImage} alt="Atmosféra festivalového eventu produkovaného Events CZ/SK" className="h-full w-full object-cover transition-transform duration-1000 hover:scale-105" fetchPriority="high" />
+              <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white/85 to-transparent" />
+              <div className="absolute bottom-6 left-6 flex items-center gap-3 rounded-full bg-white/90 px-4 py-3 text-sm font-bold text-[#4e4956] shadow-lg backdrop-blur-md"><span className="brand-gradient grid h-8 w-8 place-items-center rounded-full text-white"><Music2 className="h-4 w-4" /></span> Energie, která spojuje</div>
+            </div>
+            <div className="absolute right-[-.5rem] top-[4%] rotate-6 rounded-2xl bg-white px-5 py-4 shadow-[0_16px_45px_rgba(86,26,117,.16)] md:right-[-1rem]"><p className="text-[10px] font-extrabold uppercase tracking-[.2em] text-[#8d21df]">Live moments</p><p className="mt-1 text-lg font-black text-[#302d36]">Music · People · Energy</p></div>
+            <div aria-hidden="true" className="brand-gradient absolute -bottom-2 left-[9%] h-20 w-20 rounded-full opacity-80 shadow-[0_12px_30px_rgba(194,8,235,.3)]" />
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-20 md:py-28 lg:py-36">
-        <div className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-14">
-          <div className="grid gap-12 lg:grid-cols-[.75fr_1.25fr] lg:gap-20">
-            <div className="flex items-start gap-3 text-sm font-bold uppercase tracking-[0.18em] text-blue-600">
-              <span className="mt-2 h-2.5 w-2.5 rounded-full bg-blue-600" /> O Events CZ/SK
-            </div>
-            <div>
-              <p className="text-balance text-3xl font-black leading-tight tracking-[-0.035em] text-slate-950 sm:text-4xl lg:text-6xl">
-                Zajistíme kompletní event od stavby pódia až po catering.
-              </p>
-              <div className="mt-9 grid gap-5 border-t border-slate-200 pt-8 text-slate-600 sm:grid-cols-2">
-                <p className="leading-relaxed">Vše zařídíme podle vašich představ – občerstvení, program, výzdobu, vybavení, zvuk i interprety.</p>
-                <p className="leading-relaxed">Postaráme se také o moderátory, bezpečnost, bezkontaktní placení i kompletní úklid po akci.</p>
-              </div>
-            </div>
-          </div>
+      <section className="relative overflow-hidden bg-white py-24 md:py-32 lg:py-40">
+        <div aria-hidden="true" className="absolute -right-40 top-20 h-80 w-80 rounded-full bg-[#f6d9ff] opacity-60 blur-3xl" />
+        <div className="relative mx-auto grid max-w-[1440px] gap-14 px-5 md:px-10 lg:grid-cols-[.85fr_1.15fr] lg:items-center lg:gap-24 lg:px-14">
+          <Reveal className="relative mx-auto w-full max-w-xl">
+            <div className="overflow-hidden rounded-[2.5rem] shadow-[0_26px_70px_rgba(73,35,95,.16)]"><img src={heroImage} alt="Publikum a pódium během akce" className="aspect-[4/5] w-full object-cover transition-transform duration-1000 hover:scale-105" loading="lazy" /></div>
+            <div className="card-glow absolute -bottom-8 -right-2 max-w-[250px] rounded-3xl border border-[#eadff2] bg-white p-6 sm:-right-10"><Sparkles className="h-6 w-6 text-[#b40ae9]" /><p className="mt-4 text-xl font-black leading-tight text-[#302d36]">Vše na jednom místě. Jeden sehraný tým.</p></div>
+          </Reveal>
+          <Reveal delay={120}>
+            <p className="mb-5 text-xs font-extrabold uppercase tracking-[0.22em] text-[#8a24df]">O Events CZ/SK</p>
+            <h2 className="text-balance text-4xl font-black leading-[1.02] tracking-[-0.045em] text-[#292832] sm:text-5xl lg:text-7xl">Kompletní event od stavby pódia až po <span className="brand-text">catering.</span></h2>
+            <p className="mt-8 text-lg leading-relaxed text-[#666371]">Vše zařídíme podle vašich představ – občerstvení, program, výzdobu, vybavení, zvuk, interprety, moderátory i úklid.</p>
+            <div className="mt-9 grid gap-4 sm:grid-cols-2">{["Produkce na klíč", "Technické vybavení", "Program a interpreti", "Bezpečný průběh"].map((item) => <div key={item} className="flex items-center gap-3 rounded-2xl border border-[#eee5f3] bg-[#fcfaff] px-4 py-3 font-semibold text-[#514d59]"><span className="brand-gradient grid h-7 w-7 place-items-center rounded-full text-white"><Check className="h-4 w-4" /></span>{item}</div>)}</div>
+          </Reveal>
         </div>
       </section>
 
-      <section className="bg-slate-100 py-20 md:py-28 lg:py-32">
-        <div className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-14">
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-            <SectionHeading eyebrow="Nabízené služby" title="Zařídíme pro vás" />
-            <Link to="/sluzby" className="group inline-flex w-fit items-center gap-3 font-bold text-blue-600">
-              Všechny služby <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
-            </Link>
-          </div>
-          <div className="mt-14 grid border-x border-t border-slate-300 md:grid-cols-2 lg:grid-cols-3">
+      <section className="soft-festival-bg relative overflow-hidden py-24 md:py-32 lg:py-40">
+        <div className="relative mx-auto max-w-[1440px] px-5 md:px-10 lg:px-14">
+          <Reveal><div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between"><SectionHeading eyebrow="Nabízené služby" title="Zařídíme pro vás všechno, co dobrý event potřebuje" /><Link to="/sluzby" className="group inline-flex w-fit items-center gap-3 font-extrabold text-[#7b1cdb]">Všechny služby <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" /></Link></div></Reveal>
+          <div className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-12">
             {services.slice(0, 6).map((service, index) => {
               const Icon = service.icon;
-              return (
-                <article key={service.title} className="group min-h-72 border-b border-slate-300 p-7 transition-colors hover:bg-white md:p-9 lg:[&:not(:nth-child(3n))]:border-r">
-                  <div className="flex items-center justify-between">
-                    <span className="grid h-12 w-12 place-items-center rounded-full bg-blue-600 text-white transition-transform group-hover:scale-110"><Icon className="h-5 w-5" /></span>
-                    <span className="text-xs font-bold text-slate-400">0{index + 1}</span>
-                  </div>
-                  <h3 className="mt-10 text-2xl font-black tracking-tight text-slate-950">{service.title}</h3>
-                  <p className="mt-4 line-clamp-3 leading-relaxed text-slate-600">{service.description}</p>
-                </article>
-              );
+              const spans = ["lg:col-span-5", "lg:col-span-7", "lg:col-span-4", "lg:col-span-4", "lg:col-span-4", "lg:col-span-12"];
+              return <Reveal key={service.title} className={spans[index]} delay={(index % 3) * 90}><article className="group card-glow relative h-full min-h-[310px] overflow-hidden rounded-[2rem] border border-white bg-white p-7 transition-all duration-500 hover:-translate-y-2 hover:border-[#d9b6ef] md:p-9"><div aria-hidden="true" className="brand-gradient absolute -right-16 -top-20 h-44 w-44 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-[.10]" /><div className="flex items-start justify-between"><span className="brand-gradient grid h-14 w-14 place-items-center rounded-2xl text-white shadow-[0_10px_24px_rgba(109,26,228,.22)] transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110"><Icon className="h-6 w-6" /></span><span className="text-xs font-bold text-[#aaa2b1]">0{index + 1}</span></div><h3 className="mt-10 text-2xl font-black tracking-[-0.025em] text-[#302d36] md:text-3xl">{service.title}</h3><p className="mt-4 max-w-2xl leading-relaxed text-[#6b6772]">{service.description}</p><ArrowRight className="absolute bottom-8 right-8 h-5 w-5 text-[#a50ce8] transition-transform group-hover:translate-x-1" /></article></Reveal>;
             })}
           </div>
         </div>
       </section>
 
-      <section className="overflow-hidden bg-slate-950 py-20 text-white md:py-28 lg:py-36">
-        <div className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-14">
-          <SectionHeading eyebrow="Naše akce" title="Projekty, které žijí s publikem" light />
-          <div className="mt-14 space-y-4">
-            {projects.map((project, index) => (
-              <a key={project.name} href={project.href} target="_blank" rel="noreferrer" className="group grid min-h-44 items-center gap-8 overflow-hidden rounded-[2rem] border border-white/15 bg-white/[.04] p-6 transition-colors hover:border-blue-400 hover:bg-white/[.08] md:grid-cols-[80px_1fr_1.2fr_48px] md:p-9">
-                <span className="text-xs font-bold text-blue-400">0{index + 1}</span>
-                <div>
-                  <h3 className="text-3xl font-black tracking-tight md:text-4xl">{project.name}</h3>
-                  <p className="mt-2 text-sm text-slate-400">{project.label}</p>
-                </div>
-                <div className="flex h-28 items-center justify-center rounded-2xl bg-white p-5">
-                  <img src={project.image} alt={`Logo projektu ${project.name}`} className={`max-h-full w-auto object-contain ${project.imageClass}`} loading="lazy" />
-                </div>
-                <span className="hidden h-12 w-12 place-items-center rounded-full bg-blue-600 transition-transform group-hover:rotate-[-12deg] md:grid"><ArrowRight className="h-5 w-5 -rotate-45" /></span>
-              </a>
-            ))}
-          </div>
-          <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm font-semibold text-slate-300">
-            {["Produkce", "Technické zajištění", "Program", "Bezpečnost"].map((item) => <span key={item} className="flex items-center gap-2"><Check className="h-4 w-4 text-blue-400" /> {item}</span>)}
+      <section className="relative overflow-hidden bg-white py-24 md:py-32 lg:py-40">
+        <div aria-hidden="true" className="absolute left-[-8rem] top-1/3 h-72 w-72 rounded-full bg-[#efd5ff] opacity-50 blur-3xl" />
+        <div className="relative mx-auto max-w-[1440px] px-5 md:px-10 lg:px-14">
+          <Reveal><SectionHeading eyebrow="Naše akce" title="Projekty, které žijí s publikem" description="Festivaly a veřejné akce prezentované v portfoliu Events CZ/SK." /></Reveal>
+          <div className="mt-16 grid gap-6 lg:grid-cols-12">
+            {projects.map((project, index) => {
+              const layout = index === 0 ? "lg:col-span-7 lg:min-h-[520px]" : index === 1 ? "lg:col-span-5 lg:min-h-[520px]" : "lg:col-span-12 lg:min-h-[400px]";
+              return <Reveal key={project.name} className={layout} delay={index * 90}><a href={project.href} target="_blank" rel="noreferrer" className="group card-glow relative flex h-full min-h-[430px] flex-col overflow-hidden rounded-[2.5rem] border border-[#eee5f3] bg-[#fcfaff] p-7 transition-all duration-500 hover:-translate-y-2 hover:border-[#d59aec] md:p-10"><div aria-hidden="true" className="brand-gradient absolute -right-20 -top-24 h-64 w-64 rounded-full opacity-[.08] blur-2xl transition-transform duration-700 group-hover:scale-125" /><div className="relative flex items-center justify-between"><span className="rounded-full border border-[#dfc8ed] bg-white px-4 py-2 text-[11px] font-extrabold uppercase tracking-[.17em] text-[#7c1cdb]">{project.label}</span><span className="brand-gradient grid h-12 w-12 place-items-center rounded-full text-white shadow-[0_10px_24px_rgba(109,26,228,.2)]"><ArrowRight className="h-5 w-5 -rotate-45 transition-transform duration-300 group-hover:rotate-0" /></span></div><div className="relative my-auto flex min-h-48 items-center justify-center px-6 py-10"><span aria-hidden="true" className="absolute text-[10rem] font-black leading-none text-[#6d1ae4]/[.045] sm:text-[14rem]">0{index + 1}</span><img src={project.image} alt={`Logo projektu ${project.name}`} className={`relative max-h-44 w-auto object-contain transition-transform duration-700 group-hover:scale-105 ${project.imageClass}`} loading="lazy" /></div><div className="relative border-t border-[#e9dff0] pt-7"><span className="text-xs font-bold text-[#aaa2b1]">0{index + 1}</span><h3 className="mt-2 text-4xl font-black tracking-[-0.04em] text-[#302d36] md:text-5xl">{project.name}</h3></div></a></Reveal>;
+            })}
           </div>
         </div>
       </section>
 
-      <section className="relative min-h-[65svh] overflow-hidden">
-        <img src={heroImage} alt="Pódium a návštěvníci během eventu" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
-        <div className="absolute inset-0 bg-slate-950/45" />
-        <a href="https://youtu.be/ZD8akF_81oE" target="_blank" rel="noreferrer" className="absolute inset-0 grid place-items-center" aria-label="Přehrát video z akce">
-          <span className="grid h-24 w-24 place-items-center rounded-full bg-white text-blue-600 shadow-2xl transition-transform hover:scale-110 md:h-32 md:w-32"><Play className="ml-1 h-8 w-8 fill-current md:h-10 md:w-10" /></span>
-        </a>
-        <p className="absolute bottom-7 left-5 text-xs font-bold uppercase tracking-[0.2em] text-white md:bottom-10 md:left-10 lg:left-14">Atmosféra našich akcí</p>
+      <section className="bg-[#fbf8fd] py-24 md:py-32">
+        <div className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-14">
+          <Reveal><div className="relative overflow-hidden rounded-[2.8rem] bg-white p-3 shadow-[0_24px_70px_rgba(73,35,95,.14)] md:p-4"><div className="relative min-h-[60svh] overflow-hidden rounded-[2.2rem]"><img src={heroImage} alt="Pódium a návštěvníci během eventu" className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 hover:scale-105" loading="lazy" /><div className="absolute left-5 top-5 max-w-[280px] rounded-3xl bg-white/90 p-5 shadow-xl backdrop-blur-md md:left-8 md:top-8 md:max-w-sm md:p-7"><p className="text-xs font-extrabold uppercase tracking-[.2em] text-[#8a24df]">Atmosféra našich akcí</p><p className="mt-3 text-2xl font-black leading-tight text-[#302d36] md:text-3xl">Světla, hudba, lidé. Moment, který zůstane.</p></div><a href="https://youtu.be/ZD8akF_81oE" target="_blank" rel="noreferrer" className="absolute inset-0 grid place-items-center" aria-label="Přehrát video z akce"><span className="brand-gradient grid h-24 w-24 place-items-center rounded-full text-white shadow-[0_18px_40px_rgba(109,26,228,.35)] transition-transform hover:scale-110 md:h-28 md:w-28"><Play className="ml-1 h-8 w-8 fill-current" /></span></a></div></div></Reveal>
+        </div>
       </section>
 
       <ContactBand />

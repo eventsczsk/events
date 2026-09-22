@@ -1,28 +1,29 @@
-import { ArrowUpRight, Facebook, Mail } from "lucide-react";
+import { ArrowUpRight, Facebook, Mail, Sparkles } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
+import Reveal from "@/components/Reveal";
 import { contactEmail, facebookUrl } from "@/data/site";
 
 export default function Contact() {
   return (
-    <section className="relative min-h-[calc(100svh-76px)] overflow-hidden bg-blue-600 text-white md:min-h-[calc(100svh-88px)]">
+    <section className="soft-festival-bg relative min-h-[calc(100svh-76px)] overflow-hidden md:min-h-[calc(100svh-88px)]">
       <PageMeta title="Kontakt | Events CZ/SK" description="Kontaktujte Events CZ/SK ohledně produkce a organizace vaší akce." />
-      <div aria-hidden="true" className="absolute -right-28 top-12 h-[32rem] w-[32rem] rounded-full border-[90px] border-white/10" />
-      <div aria-hidden="true" className="absolute -bottom-60 -left-44 h-[38rem] w-[38rem] rounded-full border-[110px] border-slate-950/10" />
-      <div className="relative mx-auto grid min-h-[calc(100svh-76px)] max-w-[1440px] gap-14 px-5 py-16 md:min-h-[calc(100svh-88px)] md:px-10 md:py-24 lg:grid-cols-[1.2fr_.8fr] lg:items-end lg:px-14">
-        <div>
-          <p className="mb-6 text-xs font-bold uppercase tracking-[0.24em] text-blue-100">Kontakt</p>
-          <h1 className="text-balance text-6xl font-black leading-[0.86] tracking-[-0.06em] sm:text-7xl lg:text-[9rem]">Pojďme společně vytvořit váš event.</h1>
-        </div>
-        <div className="rounded-[2rem] bg-white p-7 text-slate-950 shadow-2xl md:p-10">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue-600">Kontaktujte nás</p>
-          <h2 className="mt-5 text-3xl font-black tracking-tight">Events CZ/SK s.r.o.</h2>
-          <p className="mt-4 leading-relaxed text-slate-600">Napište nám. Rádi s vámi probereme možnosti realizace vaší akce.</p>
-          <a href={`mailto:${contactEmail}`} className="group mt-10 flex items-center justify-between gap-4 border-y border-slate-200 py-6">
-            <span className="flex min-w-0 items-center gap-4"><span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-blue-100 text-blue-700"><Mail className="h-5 w-5" /></span><span className="truncate text-base font-bold sm:text-lg">{contactEmail}</span></span>
-            <ArrowUpRight className="h-5 w-5 shrink-0 text-blue-600 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-          </a>
-          <a href={facebookUrl} target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center gap-3 text-sm font-bold text-slate-700 hover:text-blue-600"><Facebook className="h-5 w-5" /> Events CZ/SK na Facebooku</a>
-        </div>
+      <div aria-hidden="true" className="brand-gradient absolute -right-24 top-6 h-96 w-96 rounded-full opacity-10 blur-3xl" />
+      <div aria-hidden="true" className="absolute -bottom-32 -left-32 h-80 w-80 rounded-full bg-[#f1b5ff] opacity-25 blur-3xl" />
+      <div className="relative mx-auto grid min-h-[calc(100svh-76px)] max-w-[1440px] gap-14 px-5 py-16 md:min-h-[calc(100svh-88px)] md:px-10 md:py-24 lg:grid-cols-[1.1fr_.9fr] lg:items-center lg:px-14">
+        <Reveal>
+          <p className="mb-6 flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.24em] text-[#7b1cdb]"><Sparkles className="h-4 w-4" /> Kontakt</p>
+          <h1 className="text-balance text-6xl font-black leading-[0.86] tracking-[-0.065em] text-[#292832] sm:text-7xl lg:text-[8.5rem]">Pojďme vytvořit váš <span className="brand-text">event.</span></h1>
+          <p className="mt-9 max-w-xl text-lg leading-relaxed text-[#666371] md:text-xl">Napište nám. Rádi s vámi probereme možnosti realizace vaší akce.</p>
+        </Reveal>
+        <Reveal delay={120}>
+          <div className="card-glow relative overflow-hidden rounded-[2.5rem] border border-white bg-white p-7 md:p-11">
+            <div aria-hidden="true" className="brand-gradient absolute -right-20 -top-24 h-64 w-64 rounded-full opacity-[.09] blur-2xl" />
+            <p className="relative text-xs font-extrabold uppercase tracking-[0.2em] text-[#841bdd]">Kontaktujte nás</p>
+            <h2 className="relative mt-5 text-3xl font-black tracking-tight text-[#302d36]">Events CZ/SK s.r.o.</h2>
+            <a href={`mailto:${contactEmail}`} className="group relative mt-10 flex items-center justify-between gap-4 rounded-2xl border border-[#e8daef] bg-[#fcfaff] p-5 transition-all hover:-translate-y-1 hover:border-[#cc8be8] hover:shadow-[0_12px_30px_rgba(94,33,124,.10)]"><span className="flex min-w-0 items-center gap-4"><span className="brand-gradient grid h-12 w-12 shrink-0 place-items-center rounded-2xl text-white"><Mail className="h-5 w-5" /></span><span className="truncate text-base font-bold text-[#3a3740] sm:text-lg">{contactEmail}</span></span><ArrowUpRight className="h-5 w-5 shrink-0 text-[#9916e4] transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" /></a>
+            <a href={facebookUrl} target="_blank" rel="noreferrer" className="relative mt-5 flex items-center justify-between rounded-2xl border border-[#e8daef] bg-white p-5 font-bold text-[#514d59] transition-all hover:-translate-y-1 hover:border-[#cc8be8] hover:text-[#841bdd]"><span className="flex items-center gap-4"><span className="grid h-12 w-12 place-items-center rounded-2xl bg-[#f2e8f9] text-[#8b18df]"><Facebook className="h-5 w-5" /></span>Events CZ/SK na Facebooku</span><ArrowUpRight className="h-5 w-5" /></a>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

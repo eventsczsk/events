@@ -7,50 +7,70 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
+    --foreground: 222 18% 18%;
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 222 18% 18%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
-    --primary: 217 97% 57%;
+    --popover-foreground: 222 18% 18%;
+    --primary: 269 79% 50%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 214 32% 91%;
-    --secondary-foreground: 222 47% 11%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 42%;
-    --accent: 214 100% 95%;
-    --accent-foreground: 217 91% 45%;
+    --secondary: 276 100% 97%;
+    --secondary-foreground: 269 72% 42%;
+    --muted: 270 30% 97%;
+    --muted-foreground: 222 10% 42%;
+    --accent: 294 87% 48%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 214 25% 86%;
-    --input: 214 25% 86%;
-    --ring: 217 97% 57%;
-    --radius: 1.25rem;
-    --sidebar-background: 210 40% 98%;
-    --sidebar-foreground: 222 47% 11%;
-    --sidebar-primary: 217 97% 57%;
+    --border: 270 24% 89%;
+    --input: 270 24% 89%;
+    --ring: 269 79% 50%;
+    --radius: 1.5rem;
+    --sidebar-background: 270 50% 98%;
+    --sidebar-foreground: 222 18% 18%;
+    --sidebar-primary: 269 79% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 214 100% 95%;
-    --sidebar-accent-foreground: 217 91% 45%;
-    --sidebar-border: 214 25% 86%;
-    --sidebar-ring: 217 97% 57%;
+    --sidebar-accent: 276 100% 97%;
+    --sidebar-accent-foreground: 269 72% 42%;
+    --sidebar-border: 270 24% 89%;
+    --sidebar-ring: 269 79% 50%;
   }
 
   * { @apply border-border; }
   html { scroll-behavior: smooth; }
-  body { @apply bg-background text-foreground antialiased; font-family: 'Manrope', sans-serif; }
+  body { @apply bg-white text-[#292832] antialiased; font-family: 'Manrope', sans-serif; }
   h1, h2, h3 { font-family: 'Space Grotesk', 'Manrope', sans-serif; }
-  ::selection { background: #2575fc; color: white; }
+  ::selection { background: #a50ce8; color: white; }
 }
 
 @layer utilities {
   .text-balance { text-wrap: balance; }
+  .brand-gradient { background-image: linear-gradient(120deg, #6d1ae4 0%, #c208eb 100%); }
+  .brand-text {
+    background-image: linear-gradient(120deg, #6d1ae4 0%, #c208eb 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .soft-festival-bg {
+    background:
+      radial-gradient(circle at 9% 20%, rgba(194, 8, 235, .10), transparent 26%),
+      radial-gradient(circle at 88% 12%, rgba(109, 26, 228, .11), transparent 24%),
+      #fbf9fe;
+  }
+  .card-glow { box-shadow: 0 18px 60px rgba(77, 35, 109, .09), 0 2px 12px rgba(77, 35, 109, .05); }
   .animate-rise { animation: rise .75s cubic-bezier(.22,1,.36,1) both; }
+  .animate-float { animation: float 8s ease-in-out infinite; }
 }
 
 @keyframes rise {
   from { opacity: 0; transform: translateY(28px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-7deg); }
+  50% { transform: translate3d(0, -14px, 0) rotate(-3deg); }
 }
 
 @media (prefers-reduced-motion: reduce) {
