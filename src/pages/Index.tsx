@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import ContactBand from "@/components/ContactBand";
 import PageMeta from "@/components/PageMeta";
 import Reveal from "@/components/Reveal";
+import RealizationsSection from "@/components/RealizationsSection";
 import SectionHeading from "@/components/SectionHeading";
 import { eventPhotos, projects, services } from "@/data/site";
 
@@ -55,6 +56,8 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      <RealizationsSection />
 
       <section className="bg-white py-20 md:py-24 lg:py-28">
         <div className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-14">
