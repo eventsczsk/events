@@ -64,6 +64,7 @@ export default function RealizationDetail({ project, onClose }: { project: Reali
                 </div>
               ) : <div className="aspect-[4/3] md:aspect-[16/9]"><RealizationPlaceholder brand={project.brand} /></div>}
             </div>
+            {photo?.illustrative && <p className="mt-3 rounded-xl border border-[#e3d5ec] bg-[#faf6fd] px-4 py-3 text-sm leading-relaxed text-[#63576e]">Dočasná ilustrační fotografie z galerie Events CZ/SK. Nezobrazuje potvrzenou realizaci pro značku {project.brand}.</p>}
             {photos.length > 0 && <p aria-live="polite" className="mt-3 text-center text-xs font-semibold text-[#6b6172]">Fotografie {index + 1} z {photos.length}</p>}
             {photos.length > 1 && (
               <div className="mt-4 flex gap-3 overflow-x-auto pb-3" aria-label="Výběr fotografie">
