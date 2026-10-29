@@ -39,9 +39,9 @@ function Header() {
       <div className={`fixed inset-0 z-40 flex min-h-dvh flex-col bg-[#fcfaff] px-6 pb-8 pt-28 transition-all duration-300 lg:hidden ${open ? "visible translate-y-0 opacity-100" : "invisible -translate-y-4 opacity-0"}`}>
         <div aria-hidden="true" className="brand-gradient absolute right-[-5rem] top-24 h-56 w-56 rounded-full opacity-10 blur-3xl" />
         <nav className="relative flex flex-col" aria-label="Mobilní navigace">
-          {links.map((link, index) => {
+          {links.map((link) => {
             const isActive = link.to === "/kontakt" ? location.pathname === "/kontakt" : activeHash === link.hash;
-            return <Link key={link.to} to={link.to} className={`flex items-center justify-between border-b border-[#eadff2] py-5 text-3xl font-black tracking-tight ${isActive ? "brand-text" : "text-[#292832]"}`}><span>{link.label}</span><span className="text-xs font-bold text-[#a49cab]">0{index + 1}</span></Link>;
+            return <Link key={link.to} to={link.to} className={`flex items-center justify-between border-b border-[#eadff2] py-5 text-3xl font-black tracking-tight ${isActive ? "brand-text" : "text-[#292832]"}`}><span>{link.label}</span></Link>;
           })}
         </nav>
         <a href={`mailto:${contactEmail}`} className="relative mt-auto inline-flex items-center gap-3 font-bold text-[#791cdd]"><Mail className="h-5 w-5" /> {contactEmail}</a>
