@@ -6,6 +6,7 @@ import {
 } from "@/components/ui/dialog";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { Realization } from "@/data/realizations";
+import RealizationBrandLogo from "@/components/RealizationBrandLogo";
 
 export function RealizationPlaceholder({ brand }: { brand: string }) {
   return (
@@ -62,7 +63,7 @@ export default function RealizationDetail({ project, onClose }: { project: Reali
                     <button type="button" onClick={next} aria-label="Další fotografie" className="absolute right-3 grid h-11 w-11 place-items-center rounded-full border border-[#e2d2eb] bg-white/95 text-[#841add] shadow-md"><ChevronRight className="h-5 w-5" /></button>
                   </>}
                 </div>
-              ) : <div className="aspect-[4/3] md:aspect-[16/9]"><RealizationPlaceholder brand={project.brand} /></div>}
+              ) : <div className="relative aspect-[4/3] md:aspect-[16/9]"><div className="absolute inset-0">{project.logo ? <RealizationBrandLogo project={project} /> : <RealizationPlaceholder brand={project.brand} />}</div></div>}
             </div>
             {photo?.illustrative && <p className="mt-3 rounded-xl border border-[#e3d5ec] bg-[#faf6fd] px-4 py-3 text-sm leading-relaxed text-[#63576e]">Dočasná ilustrační fotografie z galerie Events CZ/SK. Nezobrazuje potvrzenou realizaci pro značku {project.brand}.</p>}
             {photos.length > 0 && <p aria-live="polite" className="mt-3 text-center text-xs font-semibold text-[#6b6172]">Fotografie {index + 1} z {photos.length}</p>}

@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import RealizationDetail from "@/components/RealizationDetail";
 import RealizationCollage from "@/components/RealizationCollage";
+import RealizationBrandLogo from "@/components/RealizationBrandLogo";
 import { Realization, realizations } from "@/data/realizations";
 
 export default function RealizationsSection() {
@@ -32,7 +33,7 @@ export default function RealizationsSection() {
                 className="group block h-full w-full overflow-hidden rounded-3xl border border-[#e7d9ee] bg-white text-left shadow-[0_10px_35px_rgba(68,28,91,.07)] transition-all duration-300 hover:-translate-y-1 hover:border-[#cc8ce8] hover:shadow-[0_18px_45px_rgba(98,25,132,.12)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#841add] focus-visible:ring-offset-4"
               >
                 <div className="relative aspect-[16/10] overflow-hidden bg-[#f5eff9]">
-                  <RealizationCollage photos={project.photos} brand={project.brand} />
+                  <div className="absolute inset-0">{project.photos.length ? <RealizationCollage photos={project.photos} brand={project.brand} /> : <RealizationBrandLogo project={project} />}</div>
                   <span className="absolute left-4 top-4 rounded-full border border-white/70 bg-white/95 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[.15em] text-[#841add]">{project.type || "Realizace"}</span>
                 </div>
                 {project.photos.some((photo) => photo.illustrative) && <p className="border-b border-[#e7d9ee] bg-[#faf6fd] px-6 py-3 text-xs font-semibold leading-relaxed text-[#63576e] md:px-7">Ilustrační snímky jsou dočasné · nezobrazují potvrzenou realizaci {project.brand}</p>}
